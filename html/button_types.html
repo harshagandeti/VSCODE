@@ -1,0 +1,118 @@
+<html>
+<head>
+    <tilte>button-types</tilte>
+    <style>
+        /*subcribe & Join & tweet buttons ussing button label */
+        button.subscribe{
+            background-color: red;
+            border: 4px;
+            border-radius: 2px;
+            color: #ffffff;
+            width: 80px;
+            height: 30px;
+            font-weight: bold;
+
+            
+        }
+        button.join{
+            background-color:#ffffff;
+            border-color:rgb(0, 140, 234); 
+            border-radius: 2px;
+            border-style: solid;
+            border-width: 1px;
+            color:rgb(0, 140, 234);
+            width: 50px;
+            height: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+        
+
+        }
+        button.tweet{
+            width: 75px;
+            height: 30px;
+            background-color: rgb(0, 123, 255);
+            color: white;
+            border-width: 1px;
+            border-radius: 15px;
+
+         /*subcribe & Join & tweet buttons ussing button label with styling & hover */
+        }
+        button.subscribe-hover{
+            background-color: red;
+            border: 4px;
+            border-radius: 2px;
+            color: #ffffff;
+            width: 80px;
+            height: 30px;
+            font-weight: bold;
+
+            
+        }
+        /* hover */
+        button.subscribe-hover:hover{
+            background-color: rgb(146, 0, 0);
+            transition: background-color 0.6s; /* transition is using for color change
+                                                 when we click the button*/
+
+        }
+        button.join-hover{
+            background-color:#ffffff;
+            border-color:rgb(0, 140, 234); 
+            border-radius: 2px;
+            border-style: solid;
+            border-width: 1px;
+            color:rgb(0, 140, 234);
+            width: 50px;
+            height: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+        
+
+        }
+        button.join-hover:hover{
+            background-color:rgb(0, 140, 234);
+            color: white; 
+        }
+    
+        button.tweet-hover{
+            width: 75px;
+            height: 30px;
+            background-color: rgb(0, 123, 255);
+            color: white;
+            border-color: #ffffff;
+            border-width: 1px;
+            border-radius: 15px;
+        }
+        button.tweet-hover:hover{
+            background-color:rgb(0, 51, 255) ;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>by using input tag to create button</h1>
+        <input type="button" value="send">
+        <input type="button" value="exit">
+        
+    </div>
+    <div>
+       <h1>subcribe & Join & tweet buttons ussing button label</h1>
+       
+       <button class="subscribe">Subscribe</button>
+       <button class="join">Join</button>
+       <button class="tweet">Tweet</button>
+    </div>
+    <div>
+        <h1>subcribe & Join & tweet buttons ussing button label with styling & hover</h1>
+        
+        <button class="subscribe-hover">Subscribe</button>
+        <button class="join-hover">Join</button>
+        <button class="tweet-hover">Tweet</button>
+     </div>
+   
+   
+</body>
+
+</html>

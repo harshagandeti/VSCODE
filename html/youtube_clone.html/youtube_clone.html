@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> You Tube Clone Website</title><
+    <style>
+        body {
+            margin: 0px 0px;
+            padding-top: 56px;
+
+        }
+
+        .header {
+            display: flex;
+            background: white;
+            width: 100%;
+            height: 56px;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+
+        }
+
+        .header-left {
+            display: flex;
+
+            width: 180px;
+            height: 56px;
+
+
+        }
+
+
+        .logo {
+            width: 90px;
+            height: 20px;
+            padding: 17px 2px;
+            cursor: pointer;
+        }
+
+        .menubar {
+            height: 24px;
+            width: 24px;
+            padding: 16px 25px;
+            cursor: pointer;
+        }
+
+        .header-middle {
+            display: flex;
+            justify-content: center;
+
+            height: 56px;
+            width: 700px;
+            margin-left: 50px;
+
+        }
+
+        .search-button {
+            height: 41px;
+            width: 66px;
+            margin: 8px;
+            margin-left: 0px;
+            cursor: pointer;
+            border: 1px solid rgb(196, 196, 196);
+            border-radius: 2px;
+            background: rgb(239, 239, 239);
+
+        }
+
+        .search-button:hover {
+
+            background: rgb(218, 218, 218);
+        }
+
+        .search-bar {
+            height: 38px;
+            flex: 1;
+            margin-top: 8px;
+            border: 0.8px solid rgb(196, 196, 196);
+            border-radius: 2px;
+            box-sizing: inset 1px 2px 5px rgba(0, 0, 0, 0.15);
+            padding-left: 4px;
+        }
+
+        .search-icon {
+            height: 20px;
+        }
+
+        .search-bar::placeholder {
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            padding-left: 4px;
+            font-weight: normal;
+            color: rgb(145, 144, 144);
+        }
+
+        .voice-search {
+            height: 40px;
+            width: 40px;
+            border: none;
+            border-radius: 20px;
+            margin-top: 10px;
+            margin-right: 24px;
+            cursor: pointer;
+        }
+
+        .voice-icon {
+            height: 21px;
+            width: 19px;
+            padding-top: 2px;
+
+        }
+
+        .header-right {
+
+            width: 200px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-right {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 16px;
+            margin-right: 50px;
+            cursor: pointer;
+        }
+
+        .video-upload {
+            width: 26px;
+            height: 26px;
+            border: none;
+            border-radius: 13px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .notification-icon {
+            width: 24px;
+            height: 24px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .side-bar {
+            background: white;
+            position: fixed;
+            width: 72px;
+            top: 56px;
+            left: 0;
+            bottom: 0;
+        }
+
+        .side-bar-button {
+            width: 72px;
+            height: 74px;
+            background-color: white;
+            border: 0px solid rgb(196, 196, 196);
+
+        }
+
+        .side-bar-button:hover {
+            border: 1px solid rgb(151, 150, 150);
+        }
+
+        .side-bar-icons {
+            width: 24px;
+            height: 24px;
+            border-radius: 0px;
+        }
+
+        .side-bar-shorts-icons {
+            width: 44px;
+            height: 44px;
+            border-radius: 0px;
+
+        }
+
+
+
+        /* video-css */
+        p {
+            font-family: 'Roboto', sans-serif;
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+
+        }
+
+        .video-grid {
+            display: grid;
+            width: 1192;
+            grid-template-columns: 280px 280px 280px 280px;
+            column-gap: 16px;
+            row-gap: 30px;
+            margin-left: 75px;
+
+        }
+
+
+        .channel-1 {
+            display: inline-block;
+            width: 40px;
+            vertical-align: top;
+
+        }
+
+        .thumbnail-1 {
+            margin-bottom: 12px;
+            width: 280px;
+
+        }
+
+        .profile-video-info {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+        }
+
+
+        .title-1 {
+            margin-top: 0px;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-1 {
+            display: inline-block;
+            border-radius: 20px;
+            width: 40px;
+        }
+
+        .entity-1,
+        .author-1 {
+            color: rgb(96, 96, 96);
+            font-size: 12px;
+        }
+
+        .author-1 {
+            margin-bottom: 4px;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-left">
+            <img class="menubar"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo-XOUE6wMIhAucFMIZM1rt1lIu2ByecvoUqj6h8KGYbnTMen9WeOvgMOmWKjYgQib8qcc08qFClmiFqVxf0Jh8MOcBus1F7_SX4QpOsZe8Sh1tOnwLyY3RL1Wu9zCQh3JvUHKtBBKs3Z6s9eGj44sn2bs2f_Km34Zo8uFmr-2dmfZ5yK3YzxpJYb1/w30-h30/bars.png">
+            <img class="logo"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7T0Eno4jaDx_WDQVvoekQXUuuZPReNBKmHJJTMMPQNcqjjqY5uLhHbN7bIPMeGcpL7Zh-22plI0IeKTHdPXSJbAGkYOoBeVuU4nEdjIO_uGnbrghQFNYnuV84nD_BGk35Vd6b9ZWHZGOYaWREwZMXjMSLYfaLK4EZrKak7csRhQVizw8t8viGO97N/s1600/youtube-logo.png">
+        </div>
+
+
+
+
+        <div class="header-middle">
+            <input class="search-bar" type="text" placeholder="Search">
+            <button class="search-button">
+                <img class="search-icon"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgE8qyuifVAfJuhsD4RxD4BB2XzcoOiWW5Go2_HczY3Qv-5RkY87TChN5QkW4ZV6jI20bEhgZw-RULTE8c7JNBFj98Ks_6t3vCaSM4vFEgy9f4pbRKd0RblD0PbDNlkcSlSLBwTCBNHsaS69xQQudeZjAbWsYc2gsqI8NfaacpTnORkWZW4eC_C5F3-/s1600/search.png">
+            </button>
+            <button class="voice-search">
+                <img class="voice-icon"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdNNhtu__OEsoi6dSz5748ys3Pw513QLaxYEYn2skE7zjp5j5cDdnxDa33X7tblYM7bwP7vcCN47sEG7G2KOl27j1ZAMzyExN-oo9F0C7VE2b6tJcHgWcz5n7Iwe4jeuASpmYuVWCab5_hE9t5xK-ExTTBqmYIPaKogATl648zWhRfqkbubFT1fwd9/s1600/mic.png">
+            </button>
+        </div>
+
+
+
+
+        <div class="header-right">
+            <div>
+                <img class="video-upload"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgNZE7i3VAsxVDnBuagZNNLNwJgalbwCu9RHTvwAbhjvxXxxnutGdfa0Nh932KEDZVGBncLvFF2tlO23zuLDOxmqB2sxp7hfHA10EdotkfZM29qgJGjvcMyXYuhCQOIwV55iBEQVoEJ71xlnMbNoopTudwW1oWnFCGbqHSHsVV-18J1o98sDSnYrHA2/s1600/video-add.png">
+            </div>
+            <div>
+                <img class="notification-icon"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOIOBduIqXNjJHOg4MO2bZ6nnWpZNIc4qFq1DLsa2oQRegJ4Ya_Knc_JRHeBf2EiqLdfQKUhHmD8Lkpq-Pjtiq-BOjf048zH04Ge6EqIaxNICdGfxBdvCB8IpA9G3frfs3_pqtLLoVlYkoCj7z_a5uoWpM3a51eLXZceCsvgBWPthdNAbD-lxTOhKw/s1600/bell.png">
+            </div>
+            <div>
+                <img class="profile-right"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgp35TitOkK2PH1SyFAac5MRipd-ZGqjmG4fZN3mOmoubToZWTDKqdiM0Ogj4GWQ1my9KN05Iv-ciBYYTE-cHZ6-A04l7LPEb1CDKBQpX87WJRtKLSbYeCBQXv0lDZac8vmb9kiPHRDUsfIN9OKC4OHrZH3t5m8QDCIkbg0Mqgsy3fSfa92CL7xGadE/s1600/channels4_profile.jpg">
+            </div>
+        </div>
+
+    </div>
+    <div class="side-bar">
+
+        <button class="side-bar-button">
+            <img class="side-bar-icons"
+                src="https://cdn1.iconfinder.com/data/icons/office-293/128/_Building_home_house-08-256.png">
+        </button>
+        <button class="side-bar-button">
+            <img class="side-bar-icons" src="https://cdn3.iconfinder.com/data/icons/fanaticons/100/Discover-256.png">
+        </button>
+        <button class="side-bar-button">
+            <img class="side-bar-shorts-icons"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC4PHxsEltmu0Yn5rrhOGGKEZ-PBgTLJX2xzKf1MVAHBZI6rWCKk2-bP4_8R1uaDvzbP1yLbyh0zxCHGumMYxXOnXGwK0ogqcbslMtjquOvqbuHyMhFylpm795z8NS0jcaa3EuvNd3T7eUjBjgGMYYi29UTjVcprqHiEppJjL4VkUgPXRoM3O4pHqU/s320/WhatsApp%20Image%202022-07-28%20at%2010.47.35%20AM.jpeg">
+        </button>
+        <button class="side-bar-button">
+            <img class="side-bar-icons"
+                src="https://cdn1.iconfinder.com/data/icons/youtube-10/64/youtube_line-06-256.png">
+        </button>
+        <button class="side-bar-button">
+            <img class="side-bar-icons"
+                src="https://cdn0.iconfinder.com/data/icons/complete-common-version-2-4/1024/video_library4-256.png">
+        </button>
+
+    </div>
+
+
+    <div class="video-grid">
+        <!--video-1-->
+        <div class="video-1">
+            <div>
+                <img class="thumbnail-1"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYHxswaI4_1VoqaQJXn14IcKYakTqC-ZiGidSDn5_q9YT21YJMLk8okRTeX_ufxSluixHzLQUehclcV1fcJ6qxW2AobJoY-sTje6YbDRecgMF4P325bZnEcdWH6AsZ1ZHDX76iMpOAVuUFMbJw8qeVah5k_9wnAU250chK3hq50N1-Xl9SiDM_gwX9/s320/hq720th1.webp">
+            </div>
+            <div class="profile-video-info">
+                <div class="channel-1">
+                    <img class="profile-1"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHIxpkgdYUs4YDV9m16Rjer9uHLAbDuf6tppljvmqAepey8lL1W9-feHpSJBg9xexeGKZ2jQw4WHZcYO5SBPn7z-FzdN2_F9-TTaJmy9za63KO5C4UG1AxJ6ZNeNPdlBQ3e3EzORxZ2DGLWnhVu3gTSxbetd_NVoG7x6GzsNz6hgm52XyTknm6nddH/s1600/channels4_profile%20ch1.jpg">
+                </div>
+                <div class=" video-info-1">
+                    <p class="title-1">
+                        Interview With Google CEO Sudar Pichai At Google
+                    </p>
+                    <p class="author-1">
+                        ijustine
+                    </p>
+                    <p class="entity-1">1.7M Views &#183;2 months ago </p>
+                </div>
+            </div>
+        </div>
+        <!--video-2-->
+        <div class="video-1">
+            <div>
+                <img class="thumbnail-1"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEtXbE7YkmhyWCCGfnHE6LS9RDG3VxZzXVI0KHIpPe96pZg-8k-GyADPrVwBGSrZAL15rRQPtRWHuna-c96y2_2KcRL65S6Yo7_c-XEk4PpVNuINBCEvbH7y7E90xRKYGO-joezAYNqS4J_dwuUsJluU1upAjhG9B94G43f1Vdyo0zCFbl_sWln9JF/s320/hqdefault%20th3.webp">
+
+            </div>
+            <div class="profile-video-info">
+                <div class="channel-1">
+                    <img class="profile-1"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLhTtFP1MBV4huCnTOlor_1wa697d9CDsLm2ySzoOWFY0IxJyZXkLW0G9UqFGxUbMiXgxA6lZ8O0xzskLtMTqZ1OA6GYYlFiReMuSfn_Hkjj-9nlPllVyMt7x5pLbFeu1LiR7QHNIW6kkHnXXL1FOA3HbUhWes6YQT3yAnVKeDKTmA2fnpsG5jqkb_/s1600/unnamed%20ch3.jpg">
+                </div>
+                <div class=" video-info-1">
+                    <p class="title-1">
+                        what is the controversy behind the new national emblem?
+                    </p>
+                    <p class="author-1">
+                        The Hindu
+                    </p>
+                    <p class="entity-1">46K Views &#183;1 day ago </p>
+                </div>
+            </div>
+        </div>
+        <!--video-3-->
+        <div class="video-1">
+            <div>
+                <img class="thumbnail-1"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-HMjebPvXzoelCJ7kYrmqV9iZCn9lxKeAVx70nWmQMg_vfZCENBypq-veDht9FeSNfQTfv6F_IbipeO6sorKu3hkTpCXEicB48_4ptIDJ8l1h7X7Rir35Q4JkK27HcI4hEKayOsP8uzYmKpOss6iPdhlFGDPtCt8MPSgvSFOPBhvQ_VybAhB8pBmA/s320/hqdefault%20th4.webp">
+            </div>
+            <div class="profile-video-info">
+                <div class="channel-1">
+                    <img class="profile-1"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJbv7yfzQk8eOg12-LKsWutE17JWpMdyKouo9A28h9fAnvTKkUlEP9pLjPflmZZj-frB-j9i3MqquQLk8ut8aZoZuNXibeYaIy4kF5d7-6kNovUJLCKYcZ6DGZSfotO9HtLiII51lBipTww7UEde4rLhK2aeiIRqsIGBth-sCnsLGN4JlvbfQe7pc2/s1600/unnamed%20ch4.jpg">
+                </div>
+                <div class=" video-info-1">
+                    <p class="title-1">
+                        HTML & CSS Full Course FOr Biginner to Pro
+                    </p>
+                    <p class="author-1">
+                        SuperSimpleDev
+                    </p>
+                    <p class="entity-1">1.7M Views &#183;2 months ago </p>
+                </div>
+            </div>
+        </div>
+        <!--video-4-->
+        <div class="video-1">
+            <div>
+                <img class="thumbnail-1"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgY4mLQSfn6jYHmZ3y8ZHNMf-pnrswdmmyK9o90mzTFAzEBR0l8uGDFRMKdJGo5iChFv1cj82-6mxLqhAoQALRRfRp9jgqmepPl8aH2AreVhWU5qMGNtz8wuWUtVaeBfLYpT8l6B_tX9ErUmbZpcgjndvfBD8Q2JUn7kmHt2oJvG_6RMg4zabQVTVSg/s320/hq720th2.webp">
+            </div>
+            <div class="profile-video-info">
+                <div class="channel-1">
+                    <img class="profile-1"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjTg9257yo0YxqKZTHE8q-vE5xYIOW0k3WZfKRgmLXWxpfwsgH_0CVN8wkaOeksriYjjn1PccqZx59-YGCVqFsrXwASf3R0FskDPcWpmgLZhoMJELt7U0mBqjw72s3U7G9uF4Vj2yrOVxXgdFQr_IN9XAE6Owe6wUBySRxmVAVr6iKgCL9WvWvSDQM/s1600/unnamed%20ch2.jpg">
+                </div>
+                <div class=" video-info-1">
+                    <p class="title-1">
+                        best age for ias preparation | akella raghavendra
+                    </p>
+                    <p class="author-1">
+                        IAS For All
+                    </p>
+                    <p class="entity-1">280k views &#183;2 hours ago </p>
+                </div>
+            </div>
+        </div>
+        <!--video-5-->
+        <div class="video-1">
+            <div>
+                <img class="thumbnail-1"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgY4mLQSfn6jYHmZ3y8ZHNMf-pnrswdmmyK9o90mzTFAzEBR0l8uGDFRMKdJGo5iChFv1cj82-6mxLqhAoQALRRfRp9jgqmepPl8aH2AreVhWU5qMGNtz8wuWUtVaeBfLYpT8l6B_tX9ErUmbZpcgjndvfBD8Q2JUn7kmHt2oJvG_6RMg4zabQVTVSg/s320/hq720th2.webp">
+            </div>
+            <div class="profile-video-info">
+                <div class="channel-1">
+                    <img class="profile-1"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjTg9257yo0YxqKZTHE8q-vE5xYIOW0k3WZfKRgmLXWxpfwsgH_0CVN8wkaOeksriYjjn1PccqZx59-YGCVqFsrXwASf3R0FskDPcWpmgLZhoMJELt7U0mBqjw72s3U7G9uF4Vj2yrOVxXgdFQr_IN9XAE6Owe6wUBySRxmVAVr6iKgCL9WvWvSDQM/s1600/unnamed%20ch2.jpg">
+                </div>
+                <div class=" video-info-1">
+                    <p class="title-1">
+                        best age for ias preparation | akella raghavendra
+                    </p>
+                    <p class="author-1">
+                        IAS For All
+                    </p>
+                    <p class="entity-1">280k views &#183;2 hours ago </p>
+                </div>
+            </div>
+        </div>
+        <!--video-6-->
+        <div class="video-1">
+            <div>
+                <img class="thumbnail-1"
+                    src="https://i.ytimg.com/vi/T6SD8Hv8ess/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtfSH_ZcldfxS0Qt3imfogASH9Cg">
+            </div>
+            <div class="profile-video-info">
+                <div class="channel-1">
+                    <img class="profile-1"
+                        src="https://yt3.ggpht.com/ytc/AKedOLRSu0SoelpGmqyAj7H-l9AvN_a4GiV145VwyF4yqA=s68-c-k-c0x00ffffff-no-rj">
+                </div>
+                <div class=" video-info-1">
+                    <p class="title-1">
+                        Happy Birthday Suriya | Suriya Mashup
+                    </p>
+                    <p class="author-1">
+                        Sony Music South
+                    </p>
+                    <p class="entity-1">1.7M Views &#183;2 months ago </p>
+                </div>
+            </div>
+        </div>
+
+        <!--video-7-->
+        <div class="video-1">
+            <div>
+                <img class="thumbnail-1"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYHxswaI4_1VoqaQJXn14IcKYakTqC-ZiGidSDn5_q9YT21YJMLk8okRTeX_ufxSluixHzLQUehclcV1fcJ6qxW2AobJoY-sTje6YbDRecgMF4P325bZnEcdWH6AsZ1ZHDX76iMpOAVuUFMbJw8qeVah5k_9wnAU250chK3hq50N1-Xl9SiDM_gwX9/s320/hq720th1.webp">
+            </div>
+            <div class="profile-video-info">
+                <div class="channel-1">
+                    <img class="profile-1"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHIxpkgdYUs4YDV9m16Rjer9uHLAbDuf6tppljvmqAepey8lL1W9-feHpSJBg9xexeGKZ2jQw4WHZcYO5SBPn7z-FzdN2_F9-TTaJmy9za63KO5C4UG1AxJ6ZNeNPdlBQ3e3EzORxZ2DGLWnhVu3gTSxbetd_NVoG7x6GzsNz6hgm52XyTknm6nddH/s1600/channels4_profile%20ch1.jpg">
+                </div>
+                <div class=" video-info-1">
+                    <p class="title-1">
+                        Interview With Google CEO Sudar Pichai At Google
+                    </p>
+                    <p class="author-1">
+                        ijustine
+                    </p>
+                    <p class="entity-1">1.7M Views &#183;2 months ago </p>
+                </div>
+            </div>
+        </div>
+        <!--video-8-->
+        <div class="video-1">
+            <div>
+                <img class="thumbnail-1"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEtXbE7YkmhyWCCGfnHE6LS9RDG3VxZzXVI0KHIpPe96pZg-8k-GyADPrVwBGSrZAL15rRQPtRWHuna-c96y2_2KcRL65S6Yo7_c-XEk4PpVNuINBCEvbH7y7E90xRKYGO-joezAYNqS4J_dwuUsJluU1upAjhG9B94G43f1Vdyo0zCFbl_sWln9JF/s320/hqdefault%20th3.webp">
+
+            </div>
+            <div class="profile-video-info">
+                <div class="channel-1">
+                    <img class="profile-1"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLhTtFP1MBV4huCnTOlor_1wa697d9CDsLm2ySzoOWFY0IxJyZXkLW0G9UqFGxUbMiXgxA6lZ8O0xzskLtMTqZ1OA6GYYlFiReMuSfn_Hkjj-9nlPllVyMt7x5pLbFeu1LiR7QHNIW6kkHnXXL1FOA3HbUhWes6YQT3yAnVKeDKTmA2fnpsG5jqkb_/s1600/unnamed%20ch3.jpg">
+                </div>
+                <div class=" video-info-1">
+                    <p class="title-1">
+                        what is the controversy behind the new national emblem?
+                    </p>
+                    <p class="author-1">
+                        The Hindu
+                    </p>
+                    <p class="entity-1">46K Views &#183;1 day ago </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
