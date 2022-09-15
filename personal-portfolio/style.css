@@ -1,0 +1,267 @@
+html,
+    body {
+      margin-top: 60px;
+      height: 100%;
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      background-color:'white';
+    }
+  @media screen and (max-width: 480px) {
+    body {
+    padding: 0.8em;
+  }
+  }
+
+    .header {
+      border: 1px solid #e7e4e4;
+      height: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      
+      background-color:white;
+
+    }
+
+
+    .middle-header {
+      height: 60px;
+      width: 400px;
+      display: flex;
+      padding-left: 10px;
+      padding-right: 10px    ;
+    }
+
+    .navigation-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .navigation-menu a {
+      text-decoration: none;
+      color: black;
+      font-family:'lato',sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    @media only screen and (max-width: 760px){
+      .navigation-menu{
+        display: none;
+      }
+    }
+
+    .header>.left-header {
+      height: 60px;
+      width: 150px;
+    
+      margin-left: 100px;
+    }
+
+    .image-left-header {
+      width: 250px;
+      height: 100px;
+    }
+.right-header {
+  height: 60px;
+  width: 150px;
+  margin-right: 100px;
+  display:grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+    }
+
+    .social-media{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width:80%;
+      
+      
+   }
+  .social-media a{
+    color:#c3c1c1;
+  }
+    .social-media a:hover{
+      color: black;
+      
+    }
+
+
+.profile{
+  width: 450px;
+  height: 450px;
+  
+}
+.intro-image{
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+}
+.hi-text{
+  font-family: 'roboto', sans-serif;
+  font-size: 180px;
+  font-weight: 700;
+  display: flex;
+  justify-content:center;
+  margin-top: -130px;
+  margin-right: 20px;
+  
+  
+  
+
+}
+.intro-text h1{
+  font-family:'poppins', sans-serif ;
+  font-size: 48px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  line-height: 55px;
+  
+  
+}
+.student-text{
+  font-family:'poppins', sans-serif ;
+  font-size: 48px;
+  font-weight:bolder;
+  
+}
+
+section{
+  margin: 20px 20px;
+}
+.aboutme{
+  background: #f9f6f6;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+ 
+.aboutme h1{
+  display: flex;
+  justify-content: center;
+  font-family:'poppins', sans-serif  ;
+  font-weight: 500;
+  font-size: 40px;
+}
+.aboutme p{
+  font-family:'poppins', sans-serif  ;
+  font-weight: 300;
+  font-size: 20px;
+}
+.skills-container{
+  
+  display: grid;
+  width: 1192;
+  grid-template-columns: 280px 280px 280px 280px;
+  column-gap: 16px;
+  row-gap: 30px;
+  
+}
+  @media only screen and (max-width: 720px){
+    .skills-container{
+      grid-template-columns: [one] 50%;
+      grid-template-rows: [one] [two] [three] [four]; 
+    }
+  }
+.skills-imge{
+  height: 200pxpx;
+  width: 200px;
+}
+.skills h1{
+  
+  display: flex;
+  justify-content: center;
+  font-family:'poppins', sans-serif  ;
+  font-weight: 500;
+  font-size: 60px;
+}
+.skills{
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.connect{
+  border: 1px solid grey;
+  border-radius: 5px;
+  
+}
+
+
+
+* {box-sizing: border-box}
+
+
+.container {
+  padding: 16px;
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+
+a {
+  color: dodgerblue;
+}
+
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+.footer{
+  height: 200px;
+  width: 100%;
+   display: grid;
+  grid-template-rows:100px 100px;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+.footer-img{
+  width: 250px;
+  height: 100px;
+}
